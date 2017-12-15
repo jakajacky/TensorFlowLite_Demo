@@ -91,62 +91,64 @@ tensorflow/contrib/lite/build_ios_universal_lib.sh
 3、配置4项（重要）：
 
   •Target ***->General->Linked Frameworks and Libraries:
-      点击＋，添加`tensorflow/contrib/lite/gen/lib`路径下的libtensorflow-lite.a
+  
+  点击＋，添加`tensorflow/contrib/lite/gen/lib`路径下的libtensorflow-lite.a
   
   •Target ***->Build Settings->Library Search Paths：
   
-      点击＋，添加`/Users/xiaoqiang/6TensorFlowlite/tensorflow-master/tensorflow/contrib/lite/gen/lib`。
-      这个路径我用了绝对路径，开发者根据自己的项目，确保路径链接到此即可。
+  点击＋，添加`/Users/xiaoqiang/6TensorFlowlite/tensorflow-master/tensorflow/contrib/lite/gen/lib`。
+  
+  这个路径我用了绝对路径，开发者根据自己的项目，确保路径链接到此即可。
   
   •Target ***->Build Settings->Header  Search Paths：
   
-      点击＋，逐个添加
+  点击＋，逐个添加
   
-      `'${SRCROOT}/Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework/Headers'`
+  `'${SRCROOT}/Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework/Headers'`
   
-      `'${SRCROOT}/Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework/Headers/third_party/eigen3'`
+  `'${SRCROOT}/Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework/Headers/third_party/eigen3'`
   
-      ` $(inherited)`
+  ` $(inherited)`
   
-      `"${PODS_ROOT}/Headers/Public"`
+  `"${PODS_ROOT}/Headers/Public"`
   
-      `"${PODS_ROOT}/Headers/Public/TensorFlow-experimental"` 
+  `"${PODS_ROOT}/Headers/Public/TensorFlow-experimental"` 
   
-      `"$(SRCROOT)/../../../6TensorFlowlite/tensorflow-master"` 
+  `"$(SRCROOT)/../../../6TensorFlowlite/tensorflow-master"` 
   
-      `"$(SRCROOT)/../../../6TensorFlowlite/tensorflow-master/tensorflow/contrib/lite/downloads"` 
+  `"$(SRCROOT)/../../../6TensorFlowlite/tensorflow-master/tensorflow/contrib/lite/downloads"` 
   
-      `"$(SRCROOT)/../../../6TensorFlowlite/tensorflow-master/tensorflow/contrib/lite/downloads/flatbuffers/include"`
+  `"$(SRCROOT)/../../../6TensorFlowlite/tensorflow-master/tensorflow/contrib/lite/downloads/flatbuffers/include"`
   
-      后三条也使用了我的绝对路径，开发者视自己情况而定，同样确保能最终链接到这些路径。
+  后三条也使用了我的绝对路径，开发者视自己情况而定，同样确保能最终链接到这些路径。
   
   •Target ***->Build Settings->Other Linker Flags：
   
-      点击＋，逐个添加
+  点击＋，逐个添加
   
-      `$(inherited)` 
+  `$(inherited)` 
   
-      `-L` 
+  `-L` 
   
-      `${SRCROOT}/Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework` 
+  `${SRCROOT}/Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework` 
   
-      `-ObjC` 
+  `-ObjC` 
   
-      `-l"c++"` 
+  `-l"c++"` 
   
-      `-l"protobuf_experimental"` 
+  `-l"protobuf_experimental"` 
   
-      `-framework` 
+  `-framework` 
   
-      `"Accelerate"` 
+  `"Accelerate"` 
   
-      `-framework` 
+  `-framework` 
   
-      `"tensorflow_experimental"` 
+  `"tensorflow_experimental"` 
   
-      `-force_load` 
+  `-force_load` 
   
-      `${SRCROOT}/Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework/tensorflow_experimental`
+  `${SRCROOT}/Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework/tensorflow_experimental`
 
 4、打开 tflite_camera_example.xcworkspace, 跑起来吧.
 注意：
