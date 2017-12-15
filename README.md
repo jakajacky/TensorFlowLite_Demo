@@ -1,5 +1,5 @@
 # TensorFlowLite_Demo
-TensorFlow Lite 的demo。包含编译出的静态库、Pod依赖
+TensorFlow Lite 的demo。iOS使用TensorFlow Lite配置教程 
 
 # TensorFlow Lite for iOS
 
