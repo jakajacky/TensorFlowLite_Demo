@@ -26,6 +26,7 @@ Podfile.lock
 /tensorflow/contrib/lite/gen/**
 /tensorflow/contrib/lite/examples/ios/simple/data/*.txt
 /tensorflow/contrib/lite/examples/ios/simple/data/*.tflite
+/tensorflow/contrib/lite/examples/ios/simple/data/*.pb
 xcuserdata/**
 
 # Android
